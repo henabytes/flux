@@ -6,7 +6,3 @@ metadata:
 spec:
   ipAddressPools:
   - metallb-pool # (1)!
-  aggregationLength: 32
-  localPref: 100
-  communities:
-  - 65535:65282
