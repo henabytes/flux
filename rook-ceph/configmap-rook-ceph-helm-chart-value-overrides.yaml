@@ -14,7 +14,7 @@ data:
       repository: rook/ceph
       # -- Image tag
       # @default -- `master`
-      tag: master
+      tag: VERSION
       # -- Image pull policy
       pullPolicy: IfNotPresent
 
