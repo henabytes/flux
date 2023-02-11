@@ -340,7 +340,7 @@ data:
             memory: "100Mi"
 
       # The option to automatically remove OSDs that are out and are safe to destroy.
-      removeOSDsIfOutAndSafeToRemove: false
+      removeOSDsIfOutAndSafeToRemove: true
 
       # priority classes to apply to ceph resources
       priorityClassNames:
@@ -350,8 +350,8 @@ data:
 
       storage: # cluster level storage configuration and selection
         useAllNodes: true
-        useAllDevices: false
-        deviceFilter: vdb
+        useAllDevices: true
+        # deviceFilter: vdb
         # deviceFilter:
         # config:
         #   crushRoot: "custom-root" # specify a non-default root label for the CRUSH map
