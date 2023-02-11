@@ -350,8 +350,8 @@ data:
 
       storage: # cluster level storage configuration and selection
         useAllNodes: true
-        useAllDevices: true
-        # deviceFilter: vdb
+        # useAllDevices: true
+        deviceFilter: "^vd[^a]"
         # deviceFilter:
         # config:
         #   crushRoot: "custom-root" # specify a non-default root label for the CRUSH map
