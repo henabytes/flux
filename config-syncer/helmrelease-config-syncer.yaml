@@ -6,8 +6,8 @@ metadata:
 spec:
   chart:
     spec:
-      chart: config-syncer
-      version: 0.12.0
+      chart: kubed # Config Syncer was previously kubed, the chart was not renamed
+      version: v0.13.x
       sourceRef:
         kind: HelmRepository
         name: appscode
