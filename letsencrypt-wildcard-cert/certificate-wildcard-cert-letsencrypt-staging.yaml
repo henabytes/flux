@@ -1,6 +1,8 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
+  annotations:
+    kubed.appscode.com/sync: ""
   name: letsencrypt-wildcard-cert-henabytes.com-staging
   namespace: letsencrypt-wildcard-cert
 spec:
