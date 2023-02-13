@@ -5,7 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-  - name: "rook-ceph"
+    - name: "rook-ceph"
+    - name: "traefik"
   interval: 30m
   path: ./rook-ceph-cluster
   prune: true # remove any elements later removed from the above path
