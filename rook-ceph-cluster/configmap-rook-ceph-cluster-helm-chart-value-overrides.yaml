@@ -144,13 +144,12 @@ data:
       dashboard:
         enabled: true
         # serve the dashboard under a subpath (useful when you are accessing the dashboard via a reverse proxy)
-        urlPrefix: /dashboard
         # urlPrefix: /ceph-dashboard
         # serve the dashboard at the given port.
         # port: 8443
         # Serve the dashboard using SSL (if using ingress to expose the dashboard and `ssl: true` you need to set
         # the corresponding "backend protocol" annotation(s) for your ingress controller of choice)
-        ssl: true
+        # ssl: true
 
       # Network configuration, see: https://github.com/rook/rook/blob/master/Documentation/CRDs/ceph-cluster-crd.md#network-configuration-settings
       network:
@@ -414,7 +413,8 @@ data:
     ingress:
       # -- Enable an ingress for the ceph-dashboard
       dashboard:
-        annotations: {}
+        {}
+        # annotations: {}
           # kubernetes.io/ingress.class: traefik
         # annotations:
         #   external-dns.alpha.kubernetes.io/hostname: dashboard.example.com
@@ -424,13 +424,13 @@ data:
         #   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         #   nginx.ingress.kubernetes.io/server-snippet: |
         #     proxy_ssl_verify off;
-        host:
-          name: ceph.henabytes.com
-          path: "/dashboard(/|$)(.*)"
-        tls:
-        - hosts:
-            - ceph.henabytes.com
-          secretName: letsencrypt-wildcard-cert-henabytes.com-staging
+        # host:
+        #   name: ceph.henabytes.com
+        #   path: "/dashboard(/|$)(.*)"
+        # tls:
+        # - hosts:
+        #     - ceph.henabytes.com
+        #   secretName: letsencrypt-wildcard-cert-henabytes.com-staging
         ## Note: Only one of ingress class annotation or the `ingressClassName:` can be used at a time
         ## to set the ingress class
         # ingressClassName: nginx
