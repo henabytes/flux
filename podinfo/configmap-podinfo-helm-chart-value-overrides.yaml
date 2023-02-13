@@ -110,15 +110,17 @@ data:
       enabled: true
       className: ""
       annotations: {}
+        # kubernetes.io/ingress.class: nginx
+        # kubernetes.io/tls-acme: "true"
       hosts:
         - host: podinfo.henabytes.com
           paths:
             - path: /
               pathType: ImplementationSpecific
-      tls: []
-       - secretName: letsencrypt-wildcard-cert-henabytes.com-staging
-         hosts:
-           - podinfo.henabytes.com
+      tls:
+        - secretName: letsencrypt-wildcard-cert-henabytes.com-staging
+          hosts:
+            - podinfo.henabytes.com
 
     linkerd:
       profile:
