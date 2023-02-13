@@ -144,6 +144,7 @@ data:
       dashboard:
         enabled: true
         # serve the dashboard under a subpath (useful when you are accessing the dashboard via a reverse proxy)
+        urlPrefix: /dashboard
         # urlPrefix: /ceph-dashboard
         # serve the dashboard at the given port.
         # port: 8443
@@ -425,7 +426,7 @@ data:
         #     proxy_ssl_verify off;
         host:
           name: ceph.henabytes.com
-          path: "/ceph-dashboard(/|$)(.*)"
+          path: "/dashboard(/|$)(.*)"
         tls:
         - hosts:
             - ceph.henabytes.com
