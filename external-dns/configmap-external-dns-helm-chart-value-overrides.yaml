@@ -286,7 +286,7 @@ data:
       secretName: ""
       ## @param cloudflare.email When using the Cloudflare provider, `CF_API_EMAIL` to set (optional). Needed when using CF_API_KEY
       ##
-      email: ""
+      email: "hennessy.michaelg@gmail.com"
       ## @param cloudflare.proxied When using the Cloudflare provider, enable the proxy feature (DDOS protection, CDN...) (optional)
       ##
       proxied: true
