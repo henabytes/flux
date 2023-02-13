@@ -12,8 +12,12 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
-  interval: 15m
-  timeout: 5m
+  # interval: 15m
+  # timeout: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
   releaseName: external-dns
   valuesFrom:
     - kind: ConfigMap
