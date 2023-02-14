@@ -5,6 +5,7 @@ metadata:
   namespace: rook-ceph
   labels:
     app: rook-ceph-mgr
+    ceph_daemon_id: b
     rook_cluster: rook-ceph
 spec:
   ports:
@@ -14,6 +15,7 @@ spec:
       targetPort: 8443
   selector:
     app: rook-ceph-mgr
+    ceph_daemon_id: b
     rook_cluster: rook-ceph
   sessionAffinity: None
   type: LoadBalancer
