@@ -6,5 +6,5 @@ metadata:
 spec:
   redirectRegex:
     permanent: true
-    regex: "^/.well-known/ca(l|rd)dav"
-    replacement: "/remote.php/dav"
+    regex: "https://(.*)/.well-known/(?:card|cal)dav"
+    replacement: "https://$${1}/remote.php/dav"
