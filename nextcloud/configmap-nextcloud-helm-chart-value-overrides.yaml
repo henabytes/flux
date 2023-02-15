@@ -166,6 +166,8 @@ data:
       ##
       ## Extra environment variables
       extraEnv:
+        - name: TRUSTED_PROXIES
+          value: traefik.traefik
       #  - name: SOME_SECRET_ENV
       #    valueFrom:
       #      secretKeyRef:
