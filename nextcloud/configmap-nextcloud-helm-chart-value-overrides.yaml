@@ -30,7 +30,8 @@ data:
     ingress:
       enabled: true
       # className: nginx
-      annotations: {}
+      annotations:
+        traefik.ingress.kubernetes.io/router.middlewares: nextcloud-nextcloud-redirectregex@kubernetescrd,nextcloud-nextcloud-headers@kubernetescrd
       #  nginx.ingress.kubernetes.io/proxy-body-size: 4G
       #  kubernetes.io/tls-acme: "true"
       #  cert-manager.io/cluster-issuer: letsencrypt-prod
