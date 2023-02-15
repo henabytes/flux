@@ -20,7 +20,9 @@ data:
     kubeVersion:
 
     # -- Cluster ceph.conf override
-    configOverride:
+    configOverride: |
+      [mon]
+      mon_data_avail_warn = 10
     # configOverride: |
     #   [global]
     #   mon_allow_pool_delete = true
