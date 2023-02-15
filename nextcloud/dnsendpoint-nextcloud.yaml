@@ -1,0 +1,12 @@
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: "nextcloud.henabytes.com"
+  namespace: nextcloud
+spec:
+  endpoints:
+    - dnsName: "nextcloud.henabytes.com"
+      recordTTL: 180
+      recordType: CNAME
+      targets:
+        - "home.henabytes.com"
