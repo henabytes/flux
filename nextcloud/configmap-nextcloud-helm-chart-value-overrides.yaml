@@ -118,7 +118,7 @@ data:
         # To protect /var/www/html/config
         .htaccess: true
         # Redis default configuration
-        redis.config.php: true
+        redis.config.php: false
         # Apache configuration for rewrite urls
         apache-pretty-urls.config.php: true
         # Define APCu as local cache
@@ -134,12 +134,25 @@ data:
       configs:
         proxy.config.php: |-
           <?php
-          $CONFIG = array (
+          $CONFIG = array(
             'trusted_proxies' => array(
               0 => '127.0.0.1',
               1 => '10.0.0.0/8',
             ),
             'forwarded_for_headers' => array('HTTP_X_FORWARDED_FOR'),
+          );
+
+        redis.config.php: |-
+          <?php
+          $CONFIG = array (
+            'memcache.local' => '\\OC\\Memcache\\Redis',
+            'memcache.distributed' => '\OC\Memcache\Redis',
+            'memcache.locking' => '\OC\Memcache\Redis',
+            'redis' => array(
+              'host' => 'redis-master-0.redis-headless.redis.svc.cluster.local',
+              'port' => 6379,
+              'password' => getenv('REDIS_HOST_PASSWORD')
+            )
           );
 
       # For example, to use S3 as primary storage
@@ -174,12 +187,12 @@ data:
 
       ##
       ## Extra environment variables
-      extraEnv: {}
-      #  - name: SOME_SECRET_ENV
-      #    valueFrom:
-      #      secretKeyRef:
-      #        name: nextcloud
-      #        key: secret_key
+      extraEnv:
+        - name: REDIS_HOST_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: redis-auth-password
+              key: secret
 
       # Extra init containers that runs before pods start.
       extraInitContainers: []
@@ -337,7 +350,7 @@ data:
     ## ref: https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron
     ##
     cronjob:
-      enabled: false
+      enabled: true
 
       # Allow configuration of lifecycle hooks
       # ref: https://kubernetes.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/
