@@ -12,3 +12,12 @@ spec:
     kind: GitRepository
     name: flux-system
   validation: server
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: StatefulSet
+      name: redis-master
+      namespace: redis
+    - apiVersion: apps/v1
+      kind: StatefulSet
+      name: redis-replicas
+      namespace: redis
