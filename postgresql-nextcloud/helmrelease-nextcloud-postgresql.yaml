@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: nextcloud-postgresql
+  name: postgresql
   namespace: nextcloud
 spec:
   chart:
     spec:
       chart: postgresql
-      version: 6.7.x
+      version: 12.1.x
       sourceRef:
         kind: HelmRepository
         name: bitnami
