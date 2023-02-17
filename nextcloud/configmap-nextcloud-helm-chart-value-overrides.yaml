@@ -286,7 +286,7 @@ data:
       existingSecret:
         enabled: true
         secretName: nextcloud-postgres-auth-passwords
-        usernameKey: ""
+        usernameKey: db-username
         passwordKey: user
 
     ##
