@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud-postgresql
+  namespace: nextcloud
+spec:
+  chart:
+    spec:
+      chart: postgresql
+      version: 12.1.x
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 15m
+  timeout: 1h
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
+  releaseName: postgresql
+  valuesFrom:
+    - kind: ConfigMap
+      name: nextcloud-postgresql-helm-chart-value-overrides
+      valuesKey: values.yaml # This is the default, but best to be explicit for clarity
