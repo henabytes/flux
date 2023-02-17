@@ -132,6 +132,21 @@ data:
       # Extra config files created in /var/www/html/config/
       # ref: https://docs.nextcloud.com/server/15/admin_manual/configuration_server/config_sample_php_parameters.html#multiple-config-php-file
       configs:
+        custom.config.php: |-
+          <?php
+          $CONFIG = array (
+            'overwriteprotocol' => 'https',
+            'overwrite.cli.url' => 'https://nextcloud.henabytes.com',
+            'filelocking.enabled' => 'true',
+            'loglevel' => '0',
+            'enable_previews' => true,
+            'trusted_domains' =>
+              [
+                'nextcloud',
+                'nextcloud.henabytes.com'
+              ]
+          );
+
         proxy.config.php: |-
           <?php
           $CONFIG = array(
@@ -160,7 +175,7 @@ data:
         #  configs:
         s3.config.php: |-
           <?php
-          $CONFIG = array (
+          $CONFIG = array(
             'objectstore' => array(
               'class' => '\\OC\\Files\\ObjectStore\\S3',
               'arguments' => array(
