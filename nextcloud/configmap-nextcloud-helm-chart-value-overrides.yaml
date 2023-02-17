@@ -186,12 +186,12 @@ data:
 
       ##
       ## Extra environment variables
-      extraEnv:
-        - name: REDIS_HOST_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: redis-auth-password
-              key: secret
+      extraEnv: {}
+        # - name: REDIS_HOST_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: redis-auth-password
+        #       key: secret
 
       # Extra init containers that runs before pods start.
       extraInitContainers: []
@@ -265,7 +265,7 @@ data:
     ## External database configuration
     ##
     externalDatabase:
-      enabled: true
+      enabled: false
 
       ## Supported database engines: mysql or postgresql
       type: postgresql
