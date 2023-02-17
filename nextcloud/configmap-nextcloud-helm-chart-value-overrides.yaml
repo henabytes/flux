@@ -154,25 +154,26 @@ data:
             )
           );
 
-      # For example, to use S3 as primary storage
-      # ref: https://docs.nextcloud.com/server/13/admin_manual/configuration_files/primary_storage.html#simple-storage-service-s3
-      #
-      #  configs:
-      #    s3.config.php: |-
-      #      <?php
-      #      $CONFIG = array (
-      #        'objectstore' => array(
-      #          'class' => '\\OC\\Files\\ObjectStore\\S3',
-      #          'arguments' => array(
-      #            'bucket'     => 'my-bucket',
-      #            'autocreate' => true,
-      #            'key'        => 'xxx',
-      #            'secret'     => 'xxx',
-      #            'region'     => 'us-east-1',
-      #            'use_ssl'    => true
-      #          )
-      #        )
-      #      );
+        # For example, to use S3 as primary storage
+        # ref: https://docs.nextcloud.com/server/13/admin_manual/configuration_files/primary_storage.html#simple-storage-service-s3
+        #
+        #  configs:
+        s3.config.php: |-
+          <?php
+          $CONFIG = array (
+            'objectstore' => array(
+              'class' => '\\OC\\Files\\ObjectStore\\S3',
+              'arguments' => array(
+                'bucket'     => 'nextcloud',
+                'hostname'   => 'rook-ceph-rgw-ceph-objectstore.rook-ceph.svc',
+                'port'       => 80,
+                'autocreate' => true,
+                'key'        => getenv('BUCKET_ACCESS_KEY'),
+                'secret'     => getenv('BUCKET_ACCESS_SECRET'),
+                'use_ssl'    => false
+              )
+            )
+          );
 
       ## Strategy used to replace old pods
       ## IMPORTANT: use with care, it is suggested to leave as that for upgrade purposes
@@ -192,6 +193,16 @@ data:
             secretKeyRef:
               name: redis-auth-password
               key: secret
+        - name: BUCKET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: nextcloud-object-bucket
+              key: AWS_ACCESS_KEY_ID
+        - name: BUCKET_ACCESS_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: nextcloud-object-bucket
+              key: AWS_SECRET_ACCESS_KEY
 
       # Extra init containers that runs before pods start.
       extraInitContainers: []
