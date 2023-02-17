@@ -36,7 +36,7 @@ data:
           username: "nextcloud"
           password: ""
           database: "nextcloud"
-          existingSecret: "postgres-auth-passwords"
+          existingSecret: "nextcloud-postgres-auth-passwords"
           secretKeys:
             adminPasswordKey: "admin"
             userPasswordKey: "user"
