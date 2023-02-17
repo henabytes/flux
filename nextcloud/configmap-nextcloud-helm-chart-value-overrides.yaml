@@ -118,7 +118,7 @@ data:
         # To protect /var/www/html/config
         .htaccess: true
         # Redis default configuration
-        redis.config.php: false
+        redis.config.php: true
         # Apache configuration for rewrite urls
         apache-pretty-urls.config.php: true
         # Define APCu as local cache
@@ -142,17 +142,17 @@ data:
             'forwarded_for_headers' => array('HTTP_X_FORWARDED_FOR'),
           );
 
-        redis.config.php: |-
-          <?php
-          $CONFIG = array(
-            'memcache.distributed' => '\OC\Memcache\Redis',
-            'memcache.locking' => '\OC\Memcache\Redis',
-            'redis' => array(
-              'host' => 'redis-master-0.redis-headless.redis.svc.cluster.local',
-              'port' => 6379,
-              'password' => getenv('REDIS_HOST_PASSWORD')
-            )
-          );
+        # redis.config.php: |-
+        #   <?php
+        #   $CONFIG = array(
+        #     'memcache.distributed' => '\OC\Memcache\Redis',
+        #     'memcache.locking' => '\OC\Memcache\Redis',
+        #     'redis' => array(
+        #       'host' => 'redis-master-0.redis-headless.redis.svc.cluster.local',
+        #       'port' => 6379,
+        #       'password' => getenv('REDIS_HOST_PASSWORD')
+        #     )
+        #   );
 
       # For example, to use S3 as primary storage
       # ref: https://docs.nextcloud.com/server/13/admin_manual/configuration_files/primary_storage.html#simple-storage-service-s3
