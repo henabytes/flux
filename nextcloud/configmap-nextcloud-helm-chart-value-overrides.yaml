@@ -182,7 +182,7 @@ data:
                 'bucket'         => 'nextcloud',
                 'hostname'       => 'rook-ceph-rgw-ceph-objectstore.rook-ceph.svc',
                 'port'           => 80,
-                'autocreate'     => true,
+                'autocreate'     => false,
                 'key'            => getenv('BUCKET_ACCESS_KEY'),
                 'secret'         => getenv('BUCKET_ACCESS_SECRET'),
                 'use_ssl'        => false,
