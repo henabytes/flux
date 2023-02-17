@@ -20,7 +20,7 @@ data:
       imagePullSecrets: []
       ## @param global.storageClass Global StorageClass for Persistent Volume(s)
       ##
-      storageClass: ""
+      storageClass: "ceph-block"
       postgresql:
         ## @param global.postgresql.auth.postgresPassword Password for the "postgres" admin user (overrides `auth.postgresPassword`)
         ## @param global.postgresql.auth.username Name for a custom user to create (overrides `auth.username`)
@@ -33,14 +33,14 @@ data:
         ##
         auth:
           postgresPassword: ""
-          username: ""
+          username: "nextcloud"
           password: ""
-          database: ""
-          existingSecret: ""
+          database: "nextcloud"
+          existingSecret: "postgres-auth-passwords"
           secretKeys:
-            adminPasswordKey: ""
-            userPasswordKey: ""
-            replicationPasswordKey: ""
+            adminPasswordKey: "admin"
+            userPasswordKey: "user"
+            replicationPasswordKey: "replication"
         ## @param global.postgresql.service.ports.postgresql PostgreSQL service port (overrides `service.ports.postgresql`)
         ##
         service:
