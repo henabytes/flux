@@ -349,13 +349,13 @@ data:
     ## ref: https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron
     ##
     cronjob:
-      # annotations: {}
-      # curlInsecure: false
-      enabled: false
-      # failedJobsHistoryLimit: 5
-      # image: {}
-      # schedule: '*/5 * * * *'
-      # successfulJobsHistoryLimit: 2
+      annotations: {}
+      curlInsecure: false
+      enabled: true
+      failedJobsHistoryLimit: 5
+      image: {}
+      schedule: '*/5 * * * *'
+      successfulJobsHistoryLimit: 2
 
       # Allow configuration of lifecycle hooks
       # ref: https://kubernetes.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/
