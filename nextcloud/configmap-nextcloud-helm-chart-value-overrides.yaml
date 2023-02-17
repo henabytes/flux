@@ -266,13 +266,13 @@ data:
     ## External database configuration
     ##
     externalDatabase:
-      enabled: false
+      enabled: true
 
       ## Supported database engines: mysql or postgresql
-      type: mysql
+      type: postgresql
 
       ## Database host
-      host:
+      host: postgresql.nextcloud.svc.cluster.local
 
       ## Database user
       user: nextcloud
@@ -285,10 +285,10 @@ data:
 
       ## Use a existing secret
       existingSecret:
-        enabled: false
-        # secretName: nameofsecret
+        enabled: true
+        secretName: nextcloud-postgres-auth-passwords
         # usernameKey: db-username
-        # passwordKey: db-password
+        passwordKey: user
 
     ##
     ## MariaDB chart configuration
