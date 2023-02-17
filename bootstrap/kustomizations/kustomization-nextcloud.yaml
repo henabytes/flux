@@ -16,8 +16,8 @@ spec:
     kind: GitRepository
     name: flux-system
   validation: server
-  healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: nextcloud
-      namespace: nextcloud
+  # healthChecks:
+  #   - apiVersion: apps/v1
+  #     kind: Deployment
+  #     name: nextcloud
+  #     namespace: nextcloud
