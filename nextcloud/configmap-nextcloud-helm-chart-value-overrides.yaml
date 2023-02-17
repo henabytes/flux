@@ -126,7 +126,7 @@ data:
         # Apps directory configs
         apps.config.php: true
         # Used for auto configure database
-        autoconfig.php: true
+        autoconfig.php: false
         # SMTP default configuration
         smtp.config.php: true
       # Extra config files created in /var/www/html/config/
@@ -144,8 +144,7 @@ data:
 
         redis.config.php: |-
           <?php
-          $CONFIG = array (
-            'memcache.local' => '\\OC\\Memcache\\Redis',
+          $CONFIG = array(
             'memcache.distributed' => '\OC\Memcache\Redis',
             'memcache.locking' => '\OC\Memcache\Redis',
             'redis' => array(
