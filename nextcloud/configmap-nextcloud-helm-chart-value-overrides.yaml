@@ -179,7 +179,7 @@ data:
             'objectstore' => array(
               'class' => '\\OC\\Files\\ObjectStore\\S3',
               'arguments' => array(
-                'bucket'         => 'nextcloud',
+                'bucket'         => 'nextcloud-3cb33d5a-9808-473f-acc0-61026848fb33',
                 'hostname'       => 'rook-ceph-rgw-ceph-objectstore.rook-ceph.svc',
                 'port'           => 80,
                 'autocreate'     => false,
