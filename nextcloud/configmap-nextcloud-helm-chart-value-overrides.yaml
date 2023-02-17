@@ -138,7 +138,7 @@ data:
             'overwriteprotocol' => 'https',
             'overwrite.cli.url' => 'https://nextcloud.henabytes.com',
             'filelocking.enabled' => 'true',
-            'loglevel' => '0',
+            'loglevel' => '2',
             'enable_previews' => true,
             'trusted_domains' =>
               [
@@ -179,13 +179,14 @@ data:
             'objectstore' => array(
               'class' => '\\OC\\Files\\ObjectStore\\S3',
               'arguments' => array(
-                'bucket'     => 'nextcloud',
-                'hostname'   => 'rook-ceph-rgw-ceph-objectstore.rook-ceph.svc',
-                'port'       => 80,
-                'autocreate' => true,
-                'key'        => getenv('BUCKET_ACCESS_KEY'),
-                'secret'     => getenv('BUCKET_ACCESS_SECRET'),
-                'use_ssl'    => false
+                'bucket'         => 'nextcloud',
+                'hostname'       => 'rook-ceph-rgw-ceph-objectstore.rook-ceph.svc',
+                'port'           => 80,
+                'autocreate'     => true,
+                'key'            => getenv('BUCKET_ACCESS_KEY'),
+                'secret'         => getenv('BUCKET_ACCESS_SECRET'),
+                'use_ssl'        => false,
+                'use_path_style' => true
               )
             )
           );
@@ -227,12 +228,12 @@ data:
 
       # Extra sidecar containers.
       extraSidecarContainers: []
-      #  - name: nextcloud-logger
-      #    image: busybox
-      #    command: [/bin/sh, -c, 'while ! test -f "/run/nextcloud/data/nextcloud.log"; do sleep 1; done; tail -n+1 -f /run/nextcloud/data/nextcloud.log']
-      #    volumeMounts:
-      #    - name: nextcloud-data
-      #      mountPath: /run/nextcloud/data
+        - name: nextcloud-logger
+          image: busybox
+          command: [/bin/sh, -c, 'while ! test -f "/run/nextcloud/data/nextcloud.log"; do sleep 1; done; tail -n+1 -f /run/nextcloud/data/nextcloud.log']
+          volumeMounts:
+          - name: nextcloud-data
+            mountPath: /run/nextcloud/data
 
       # Extra mounts for the pods. Example shown is for connecting a legacy NFS volume
       # to NextCloud pods in Kubernetes. This can then be configured in External Storage
