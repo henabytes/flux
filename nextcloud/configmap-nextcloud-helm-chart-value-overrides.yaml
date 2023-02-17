@@ -396,7 +396,7 @@ data:
       ## If defined, PVC must be created manually before volume will be bound
       # existingClaim:
 
-      accessMode: ReadWriteMany
+      accessMode: ReadWriteOnce
       size: 8Gi
 
       ## Use an additional pvc for the data directory rather than a subpath of the default PVC
@@ -452,7 +452,7 @@ data:
     ## ref: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
     ##
     hpa:
-      enabled: true
+      enabled: false
       cputhreshold: 60
       minPods: 1
       maxPods: 10
