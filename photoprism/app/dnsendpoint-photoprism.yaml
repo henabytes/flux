@@ -1,0 +1,12 @@
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: "photoprism.henabytes.com"
+  namespace: photoprism
+spec:
+  endpoints:
+    - dnsName: "photoprism.henabytes.com"
+      recordTTL: 180
+      recordType: CNAME
+      targets:
+        - "home.henabytes.com"
