@@ -17,5 +17,5 @@ spec:
   interval: 1h
   valuesFrom:
     - kind: ConfigMap
-      name: ww-gitops-cluster-helm-chart-value-overrides
+      name: ww-gitops-helm-chart-value-overrides
       valuesKey: values.yaml
