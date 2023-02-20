@@ -82,7 +82,7 @@ data:
       # enabled. Without this, we'll still set up the roles and
       # permissions, but the secret with username and password has to be
       # provided separately.
-      createSecret: false
+      createSecret: true
       # -- Set username for local admin user, this should match the value in the secret `cluster-user-auth`
       # which can be created with `adminUser.createSecret`. Requires `adminUser.create`.
       username: admin
