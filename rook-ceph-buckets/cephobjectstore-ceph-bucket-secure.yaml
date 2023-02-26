@@ -18,7 +18,7 @@ spec:
     sslCertificateRef: letsencrypt-wildcard-cert-henabytes.com-staging
     port: 80
     securePort: 443
-    instances: 1
+    instances: 3
   healthCheck:
     bucket:
       disabled: false
