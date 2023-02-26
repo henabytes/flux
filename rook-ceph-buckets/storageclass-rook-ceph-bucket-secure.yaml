@@ -1,9 +1,10 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: rook-ceph-bucket-secure
+  name: ceph-bucket-secure
 provisioner: rook-ceph.ceph.rook.io/bucket
 reclaimPolicy: Delete
 parameters:
   objectStoreName: ceph-objectstore
   objectStoreNamespace: rook-ceph
+  region: us-east-1
