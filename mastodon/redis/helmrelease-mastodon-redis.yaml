@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mastodon-redis
+  namespace: mastodon
+spec:
+  chart:
+    spec:
+      chart: redis
+      version: 17.7.4
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 15m
+  timeout: 5m
+  releaseName: redis
+  valuesFrom:
+    - kind: ConfigMap
+      name: mastodon-redis-helm-chart-value-overrides
+      valuesKey: values.yaml # This is the default, but best to be explicit for clarity
