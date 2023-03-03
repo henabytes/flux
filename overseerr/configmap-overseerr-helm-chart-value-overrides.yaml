@@ -41,6 +41,15 @@ data:
       # @default -- See values.yaml
       main:
         enabled: true
+        hosts:
+          - host: overseerr.henabytes.com
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - secretName: letsencrypt-wildcard-cert-henabytes.com-staging
+            hosts:
+              - overseerr.henabytes.com
 
     # -- Configure persistence settings for the chart under this key.
     # @default -- See values.yaml
