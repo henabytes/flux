@@ -6,8 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: doplarr
-      version: 4.x
+      chart: ./catalog/stable/doplarr/4.0.9
       sourceRef:
         kind: GitRepository
         name: truecharts
