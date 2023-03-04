@@ -5,6 +5,7 @@ metadata:
   namespace: rook-ceph
   annotations:
     external-dns.alpha.kubernetes.io/hostname: "ceph.internal.henabytes.com"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
   labels:
     app: rook-ceph-mgr
     ceph_daemon_id: b
