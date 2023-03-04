@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: rook-ceph-dashboard
   namespace: rook-ceph
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: "ceph.internal.henabytes.com"
   labels:
     app: rook-ceph-mgr
     ceph_daemon_id: b
