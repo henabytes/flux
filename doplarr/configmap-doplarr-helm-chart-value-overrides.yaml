@@ -46,7 +46,7 @@ data:
       - name: SONARR__LANGUAGE_PROFILE
         value: ""
       - name: RADARR__URL
-        value ""
+        value: ""
       - name: RADARR__QUALITY_PROFILE
         value: ""
       - name: PARTIAL_SEASONS
