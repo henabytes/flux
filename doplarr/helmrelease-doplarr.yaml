@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: doplarr
+  namespace: doplarr
+spec:
+  chart:
+    spec:
+      chart: doplarr
+      version: 4.x
+      sourceRef:
+        kind: GitRepository
+        name: truecharts
+        namespace: flux-system
+  interval: 15m
+  timeout: 5m
+  releaseName: doplarr
+  valuesFrom:
+    - kind: ConfigMap
+      name: doplarr-helm-chart-value-overrides
+      valuesKey: values.yaml # This is the default, but best to be explicit for clarity
