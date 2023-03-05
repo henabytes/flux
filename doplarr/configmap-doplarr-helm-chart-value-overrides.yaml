@@ -24,7 +24,7 @@ data:
 
     env:
       - name: OVERSEERR__URL
-        value: overseerr.henabytes.com
+        value: https://overseerr.henabytes.com
       - name: OVERSEERR__API
         valueFrom:
           secretKeyRef:
@@ -52,7 +52,7 @@ data:
       - name: PARTIAL_SEASONS
         value: true
       - name: LOG_LEVEL
-        value: ":info"
+        value: ":debug"
 
     service:
       main:
