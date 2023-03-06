@@ -17,7 +17,7 @@ data:
       repository: photoprism/photoprism
       # -- image tag
       # @default -- chart.appVersion
-      tag: 221118-jammy
+      tag: preview-ubuntu
       # -- image pull policy
       pullPolicy: IfNotPresent
 
