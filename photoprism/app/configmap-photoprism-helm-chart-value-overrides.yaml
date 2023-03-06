@@ -25,11 +25,14 @@ data:
     # @default -- See below
     env:
       # -- Set the container timezone
-      TZ: UTC
+      - name: TZ
+        value: UTC
       # -- Photoprism storage path
-      PHOTOPRISM_STORAGE_PATH: /photoprism/storage
+      - name: PHOTOPRISM_STORAGE_PATH
+        value: /photoprism/storage
       # -- Photoprism originals path
-      PHOTOPRISM_ORIGINALS_PATH: /photoprism/originals
+      - name: PHOTOPRISM_ORIGINALS_PATH
+        value: /photoprism/originals
       # -- Initial admin password. **BE SURE TO CHANGE THIS!**
       - name: PHOTOPRISM_ADMIN_PASSWORD
         valueFrom:
@@ -37,21 +40,29 @@ data:
             name: photoprism-secrets
             key: PHOTOPRISM_ADMIN_PASSWORD
       # -- Disable authentication / password protection
-      PHOTOPRISM_PUBLIC: "false"
+      - name: PHOTOPRISM_PUBLIC
+        value: "false"
       # -- Sets UID Photoprism runs under.
-      UID:  # 1000
+      - name: UID
+        value:  # 1000
       # -- Sets GID Photoprism runs under.
-      GID:  # 1000
+      - name: GID
+        value:  # 1000
       # -- Sets UMASK.
-      UMASK:  # 0000
+      - name: UMASK
+        value:  # 0000
       # -- Database driver (sqlite, mysql)
-      PHOTOPRISM_DATABASE_DRIVER: mysql
+      - name: PHOTOPRISM_DATABASE_DRIVER
+        value: mysql
       # -- Database host incl. port
-      PHOTOPRISM_DATABASE_SERVER: mariadb.photoprism.svc.cluster.local:3306
+      - name: PHOTOPRISM_DATABASE_SERVER
+        value: mariadb.photoprism.svc.cluster.local:3306
       # -- Database schema name
-      PHOTOPRISM_DATABASE_NAME: photoprism
+      - name: PHOTOPRISM_DATABASE_NAME
+        value: photoprism
       # -- Database user name
-      PHOTOPRISM_DATABASE_USER: photoprism
+      - name: PHOTOPRISM_DATABASE_USER
+        value: photoprism
       # -- Database user password
       - name: PHOTOPRISM_DATABASE_PASSWORD
         valueFrom:
