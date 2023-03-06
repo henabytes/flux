@@ -97,12 +97,14 @@ data:
     persistence:
       config:
         enabled: true
+        size: 8Gi
         storageClass: ceph-block
         accessMode: ReadWriteOnce
         mountPath: /photoprism/storage
 
       originals:
         enabled: true
+        size: 8Gi
         storageClass: ceph-block
         accessMode: ReadWriteOnce
         mountPath: /photoprism/originals
