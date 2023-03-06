@@ -22,7 +22,7 @@ data:
       ##   - myRegistryKeySecretName
       ##
       imagePullSecrets: []
-      storageClass: ""
+      storageClass: "ceph-block"
 
     ## @section Common parameters
     ##
@@ -72,6 +72,12 @@ data:
       args:
         - infinity
 
+    ## @param serviceBindings.enabled Create secret for service binding (Experimental)
+    ## Ref: https://servicebinding.io/service-provider/
+    ##
+    serviceBindings:
+      enabled: false
+
     ## @section MariaDB common parameters
     ##
 
@@ -88,7 +94,7 @@ data:
     image:
       registry: docker.io
       repository: bitnami/mariadb
-      tag: 10.6.12-debian-11-r3
+      tag: 10.6.12-debian-11-r9
       digest: ""
       ## Specify a imagePullPolicy
       ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -119,7 +125,7 @@ data:
       ## @param auth.database Name for a custom database to create
       ## ref: https://github.com/bitnami/containers/blob/main/bitnami/mariadb/README.md#creating-a-database-on-first-run
       ##
-      database: my_database
+      database: photoprism
       ## @param auth.username Name for a custom user to create
       ## ref: https://github.com/bitnami/containers/blob/main/bitnami/mariadb/README.md#creating-a-database-user-on-first-run
       ##
@@ -458,7 +464,7 @@ data:
         ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
         ##   GKE, AWS & OpenStack)
         ##
-        storageClass: "ceph-block"
+        storageClass: ""
         ## @param primary.persistence.annotations MariaDB primary persistent volume claim annotations
         ##
         annotations: {}
@@ -996,7 +1002,7 @@ data:
       image:
         registry: docker.io
         repository: bitnami/bitnami-shell
-        tag: 11-debian-11-r86
+        tag: 11-debian-11-r94
         digest: ""
         pullPolicy: IfNotPresent
         ## Optionally specify an array of imagePullSecrets (secrets must be manually created in the namespace)
@@ -1032,7 +1038,7 @@ data:
       image:
         registry: docker.io
         repository: bitnami/mysqld-exporter
-        tag: 0.14.0-debian-11-r90
+        tag: 0.14.0-debian-11-r96
         digest: ""
         pullPolicy: IfNotPresent
         ## Optionally specify an array of imagePullSecrets (secrets must be manually created in the namespace)

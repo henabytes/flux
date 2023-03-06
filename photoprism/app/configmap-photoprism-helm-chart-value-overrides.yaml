@@ -98,11 +98,13 @@ data:
       config:
         enabled: true
         storageClass: ceph-block
+        accessMode: ReadWriteOnce
         mountPath: /photoprism/storage
 
       originals:
         enabled: true
         storageClass: ceph-block
+        accessMode: ReadWriteOnce
         mountPath: /photoprism/originals
 
     # -- Enable and configure mariadb database subchart under this key.
