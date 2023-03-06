@@ -84,13 +84,14 @@ data:
       main:
         enabled: true
         hosts:
-        - host: photoprism.henabytes.com
-          paths:
-          - /
+          - host: photoprism.henabytes.com
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
-        - hosts:
-          - photoprism.henabytes.com
-          secretName: letsencrypt-wildcard-cert-henabytes.com-staging
+          - secretName: letsencrypt-wildcard-cert-henabytes.com-staging
+            hosts:
+              - photoprism.henabytes.com
 
     # -- Configure persistence settings for the chart under this key.
     # @default -- See values.yaml
