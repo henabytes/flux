@@ -7,4 +7,4 @@ spec:
   interval: 1h0s
   ref:
     branch: main
-  url: https://github.com/coder/code-server/ci/helm-chart
+  url: https://github.com/coder/code-server
