@@ -71,7 +71,7 @@ data:
         # -- you can also specify the name of an existing Secret
         # with keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
         existingSecret: mastodon-object-bucket
-        bucket: mastodon-5a609b1c-618f-4498-8f48-65b3eb3524f8
+        bucket: mastodon-151fdc80-ad87-4508-9237-a0577dea7746
         endpoint: ""
         hostname: rook-ceph-rgw-ceph-objectstore.rook-ceph.svc
         region: ""
