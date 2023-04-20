@@ -5,4 +5,4 @@ metadata:
   namespace: mastodon
 spec:
   generateBucketName: mastodon
-  storageClassName: ceph-bucket
+  storageClassName: ceph-bucket-secure

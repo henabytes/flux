@@ -15,7 +15,7 @@ spec:
       codingChunks: 1
   preservePoolsOnDelete: true
   gateway:
-    sslCertificateRef: letsencrypt-wildcard-cert-henabytes.com-staging
+    sslCertificateRef: self-signed-cert-ceph-objectstore-secure
     port: 80
     securePort: 443
     instances: 3
