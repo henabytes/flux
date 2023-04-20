@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: trust-manager-ca-rook-ceph.svc
+  namespace: cert-manager
+spec:
+  isCA: true
+  commonName: rook-ceph.svc
+  secretName: trust-manager-ca-rook-ceph.svc
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  issuerRef:
+    name: trust-manager-ca-rook-ceph.svc
+    kind: ClusterIssuer
+    group: cert-manager.io

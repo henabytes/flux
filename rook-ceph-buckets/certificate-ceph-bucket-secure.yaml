@@ -11,8 +11,8 @@ spec:
   duration: 170000h
   renewBefore: 72h
   issuerRef:
-    kind: Issuer
-    name: selfsigned
+    kind: ClusterIssuer
+    name: trust-manager-ca-rook-ceph.svc
   commonName: "rook-ceph-rgw-ceph-objectstore-secure.rook-ceph.svc"
   isCA: true
   dnsNames:
