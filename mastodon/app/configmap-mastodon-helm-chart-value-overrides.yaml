@@ -6,8 +6,8 @@ metadata:
 data:
   values.yaml: |-
     image:
-      repository: tootsuite/mastodon
-      # https://hub.docker.com/r/tootsuite/mastodon/tags
+      repository: ghcr.io/mastodon/mastodon
+      # https://github.com/mastodon/mastodon/pkgs/container/mastodon
       #
       # alternatively, use `latest` for the latest release or `edge` for the image
       # built from the most recent commit
@@ -65,7 +65,7 @@ data:
               storage: 100Gi
       s3:
         enabled: true
-        use_https: false
+        use_https: true
         access_key: ""
         access_secret: ""
         # -- you can also specify the name of an existing Secret
@@ -73,7 +73,7 @@ data:
         existingSecret: mastodon-object-bucket
         bucket: mastodon-151fdc80-ad87-4508-9237-a0577dea7746
         endpoint: ""
-        hostname: rook-ceph-rgw-ceph-objectstore.rook-ceph.svc
+        hostname: rook-ceph-rgw-ceph-objectstore-secure.rook-ceph.svc
         region: ""
         permission: ""
         # -- If you have a caching proxy, enter its base URL here.

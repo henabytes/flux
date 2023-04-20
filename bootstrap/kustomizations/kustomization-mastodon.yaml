@@ -4,6 +4,8 @@ metadata:
   name: mastodon
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: "rook-ceph-buckets"
   interval: 15m
   path: ./mastodon/app
   prune: true # remove any elements later removed from the above path
