@@ -15,4 +15,4 @@ spec:
     - apiVersion: apps/v1
       kind: Deployment
       name: trust-manager
-      namespace: trust-manager
+      namespace: cert-manager
