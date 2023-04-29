@@ -353,7 +353,7 @@ data:
       storage: # cluster level storage configuration and selection
         useAllNodes: true
         # useAllDevices: true
-        deviceFilter: "^vd[^ac]"
+        deviceFilter: "^(vd[^ac]|sd[^ab])"
         # deviceFilter:
         # config:
         #   crushRoot: "custom-root" # specify a non-default root label for the CRUSH map
