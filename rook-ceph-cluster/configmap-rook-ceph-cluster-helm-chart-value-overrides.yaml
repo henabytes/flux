@@ -141,6 +141,8 @@ data:
           # are already enabled by other settings in the cluster CR.
           - name: pg_autoscaler
             enabled: true
+          - name: rook
+            enabled: true
 
       # enable the ceph dashboard for viewing cluster status
       dashboard:
