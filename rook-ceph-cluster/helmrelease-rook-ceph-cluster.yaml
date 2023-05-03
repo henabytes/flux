@@ -23,6 +23,6 @@ spec:
     crds: CreateReplace # Upgrade CRDs on package update
   releaseName: rook-ceph-cluster
   valuesFrom:
-  - kind: ConfigMap
-    name: rook-ceph-cluster-helm-chart-value-overrides
-    valuesKey: values.yaml
+    - kind: ConfigMap
+      name: rook-ceph-cluster-helm-chart-value-overrides
+      valuesKey: values.yaml

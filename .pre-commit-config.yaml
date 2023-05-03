@@ -1,0 +1,27 @@
+---
+repos:
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.31.0
+    hooks:
+      - id: yamllint
+        args: [-c=.yamllint]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: check-added-large-files
+      - id: end-of-file-fixer
+      - id: no-commit-to-branch
+  - repo: https://github.com/bridgecrewio/checkov.git
+    rev: 2.3.214
+    hooks:
+      - id: checkov
+        args:
+          - -d .
+          - --skip-path=/bootstrap/flux-system
+          - --skip-path=/.*/sealedsecret-.*
+          - --skip-check=CKV_K8S_21
+        files: \.yaml$

@@ -11,12 +11,12 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  # healthChecks:
-  #   - apiVersion: apps/v1
-  #     kind: StatefulSet
-  #     name: mastodon-redis-master
-  #     namespace: mastodon
-  #   - apiVersion: apps/v1
-  #     kind: StatefulSet
-  #     name: mastodon-redis-replicas
-  #     namespace: mastodon
+    # healthChecks:
+    #   - apiVersion: apps/v1
+    #     kind: StatefulSet
+    #     name: mastodon-redis-master
+    #     namespace: mastodon
+    #   - apiVersion: apps/v1
+    #     kind: StatefulSet
+    #     name: mastodon-redis-replicas
+    #     namespace: mastodon
