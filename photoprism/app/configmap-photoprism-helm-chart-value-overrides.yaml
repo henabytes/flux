@@ -98,7 +98,7 @@ data:
     persistence:
       config:
         enabled: true
-        size: 8Gi
+        size: 20Gi
         storageClass: ceph-block
         accessMode: ReadWriteOnce
         mountPath: /photoprism/storage
