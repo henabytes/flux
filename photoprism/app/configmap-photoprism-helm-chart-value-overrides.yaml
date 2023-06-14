@@ -105,10 +105,17 @@ data:
 
       originals:
         enabled: true
-        size: 8Gi
+        size: 250Gi
         storageClass: ceph-block
         accessMode: ReadWriteOnce
         mountPath: /photoprism/originals
+
+      import:
+        enabled: true
+        size: 50Gi
+        storageClass: ceph-block
+        accessMode: ReadWriteOnce
+        mountPath: /photoprism/import
 
     # -- Enable and configure mariadb database subchart under this key.
     #    For more options see [mariadb chart documentation](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
