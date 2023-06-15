@@ -89,7 +89,7 @@ data:
               - path: /
                 pathType: Prefix
         tls:
-          - secretName: letsencrypt-wildcard-cert-henabytes.com-staging
+          - secretName: letsencrypt-wildcard-cert-henabytes.com
             hosts:
               - photoprism.henabytes.com
 

@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: letsencrypt-wildcard-cert-henabytes.com
+  namespace: letsencrypt-wildcard-cert
+spec:
+  secretName: letsencrypt-wildcard-cert-henabytes.com
+  secretTemplate:
+    annotations:
+      kubed.appscode.com/sync: ""
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - "henabytes.com"
+    - "*.henabytes.com"
