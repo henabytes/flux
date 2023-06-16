@@ -181,9 +181,9 @@ data:
     nodeSelector:
       kubernetes.io/os: linux
 
-    ingressShim: {}
-      # defaultIssuerName: ""
-      # defaultIssuerKind: ""
+    ingressShim:
+      defaultIssuerName: letsencrypt-prod
+      defaultIssuerKind: ClusterIssuer
       # defaultIssuerGroup: ""
 
     prometheus:
@@ -299,9 +299,12 @@ data:
 
       # Additional command line flags to pass to cert-manager webhook binary.
       # To see all available flags run docker run quay.io/jetstack/cert-manager-webhook:<version> --help
-      extraArgs: []
+      extraArgs:
       # Path to a file containing a WebhookConfiguration object used to configure the webhook
       # - --config=<path-to-config-file>
+      # - --dns01-recursive-nameservers-only
+      # - --dns01-self-check-nameservers=8.8.8.8:53,1.1.1.1:53
+        - --dns01-recursive-nameservers=8.8.8.8:53,1.1.1.1:53
 
       resources: {}
         # requests:
